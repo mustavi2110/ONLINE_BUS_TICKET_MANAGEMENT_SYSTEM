@@ -1,0 +1,277 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+</head>
+<style>
+
+
+    .containers
+    {
+    width:550px;
+    height:100%;
+    margin-left:10px;
+    }
+
+    .pic
+    {
+    box-shadow: 6px 6px 7px #888888;
+    width:300px;
+    height:300px;
+    position: relative;
+    overflow: hidden;
+    margin-top:100px;
+    margin-left:135px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    .pic:before
+    {
+    content: '';
+    margin-top:-63px;
+    margin-left:-80px;
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background:url(../Image/bus5.jpg) center center;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+
+    .pic:hover , .box1:hover , .box2:hover , .social1:hover , .social2:hover , .social3:hover
+    {
+    box-shadow: 3px 3px 7px #888888;
+    cursor:pointer;
+    }
+
+    .box1
+    {
+    box-shadow: 6px 6px 7px #888888;
+    width:100px;
+    height:100px;
+    position: relative;
+    overflow: hidden;
+    margin-top:-124px;
+    margin-left:16px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    .box1:before
+    {
+    content: '';
+    margin-top:-25px;
+    margin-left:-31px;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(../Image/images.jpg) center center;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+
+    .box2
+    {
+    box-shadow: 6px 6px 7px #888888;
+    position: relative;
+    overflow: hidden;
+    width:194px;
+    height:99px;
+    margin-top:14px;
+    margin-left:78px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    .box2:before
+    {
+
+    content: '';
+    margin-top:-74px;
+    margin-left:-31px;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background:url(../Image/map.jpg) center center;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+
+    .social1
+    {
+    box-shadow: 6px 6px 7px #888888;
+    width:80px;
+        background:url(../Image/fb.png) no-repeat center;
+    height:80px;
+    background-color:#3b5998;
+    margin-top:-57px;
+    margin-left:305px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+
+    .social1 > i
+    {
+    font-size:60px;
+    margin-top:13px;
+    margin-left:20px;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    color:#ffffff;
+    }
+
+    .social2
+    {
+           background:url(../Image/dribble.png) no-repeat center;
+    box-shadow: 6px 6px 7px #888888;
+    width:80px;
+    height:80px;
+
+    background-color:#C73B6F;
+    margin-top:-142px;
+    margin-left:370px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    .social2 > i
+    {
+    font-size:60px;
+    margin-top:8px;
+  
+    margin-left:13px;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    color:#ffffff;
+    }
+
+    .social3
+    {
+    box-shadow: 6px 6px 7px #888888;
+     background:url(../Image/gmail.jpg) no-repeat center;
+    width:80px;
+    height:80px;
+    background-color:#000000;
+    margin-top:-143px;
+    margin-left:435px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    .social3 > i
+    {
+    font-size:60px;
+    margin-top:9px;
+    margin-left:9px;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    color:#ffffff;
+    }
+
+    .content
+    {
+    height:100%;
+    width:500px;
+    
+    }
+
+    p
+    {
+    font-family: 'Open Sans Condensed', sans-serif;
+    }
+
+    h2
+    {
+    font-family: 'Dancing Script', cursive;
+    color:floralwhite;
+    }
+
+    .contentHead
+    {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size:60px;
+    font-weight:500;
+    text-decoration:underline;
+    }
+
+    sup
+    {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-style: italic;
+    font-size:smaller;
+    }
+
+    span
+    {
+    color:pink;
+    }
+    body {
+           background: url(../Image/bus4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    font-family: 'Noto Sans', sans-serif;
+
+}
+</style>
+
+<body>
+
+
+   
+
+    <div class="row">
+    <div class="containers col-lg-6 col-md-6">
+
+    <div class="pic"></div>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <div class="social1">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+    </div>
+    <div class="social2">
+    <i class="fa fa-dribbble" aria-hidden="true"></i>
+    </div>
+    <div class="social3">
+    <i class="fa fa-gmail" aria-hidden="true"></i>
+    </div>
+    </div>
+
+    <div class="content col-md-offset-6 col-lg-offset-6">
+    <center><h1 class="contentHead">ABOUT US</h1></center>
+
+    <h2>
+        ‘Bus ticket management system’ is a web application which works for customers in buying bus tickets.
+        </br>It provides bus transportation system, a facility to reserved seats,cancellation of seats
+        </br>This system can be used by the users in performing an online reservation
+        </br>via internet for their all business purposes.
+        The system will offer better functionalities than the manual system, 
+        </br>where the users of the system will have to be computer literate so as to use the system effectively
+        </br>This software saves the entire passenger’s long queue and hassle.
+    </h2>
+    </div>
+    </div>
+    
+</body>
+
+</html>

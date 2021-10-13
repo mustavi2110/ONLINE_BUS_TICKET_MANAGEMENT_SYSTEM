@@ -1,0 +1,265 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+<!--
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+    <!doctype html>
+<html>
+<head>
+<title>Marvelous Contact Form Flat Responsive widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Marvelous Contact Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- font files -->
+<link href='//fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
+<!-- /font files -->
+<!-- css files -->
+<link href="~/css/cnt.css" rel='stylesheet' type='text/css' media="all" />
+<!-- /css files -->
+</head>
+<style>
+    
+/*--- reset code ---*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* start editing from here */
+a {
+    text-decoration: none;
+}
+
+.txt-rt {
+    text-align: right;
+}
+/* text align right */
+.txt-lt {
+    text-align: left;
+}
+/* text align left */
+.txt-center {
+    text-align: center;
+    /*-- W3Layouts --*/
+}
+/* text align center */
+.float-rt {
+    float: right;
+}
+/* float right */
+.float-lt {
+    float: left;
+}
+/* float left */
+.clear {
+    clear: both;
+}
+/* clear float */
+.pos-relative {
+    position: relative;
+}
+/* Position Relative */
+.pos-absolute {
+    position: absolute;
+}
+/* Position Absolute */
+.vertical-base {
+    vertical-align: baseline;
+}
+/* vertical align baseline */
+.vertical-top {
+    vertical-align: top;
+}
+/* vertical align top */
+nav.vertical ul li {
+    display: block;
+}
+/* vertical menu */
+nav.horizontal ul li {
+    display: inline-block;
+}
+/* horizontal menu */
+img {
+    max-width: 100%;
+}
+
+/*--- end reset code ---*/
+body {
+    background: url(../Image/bus4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: normal;
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+}
+
+.content-w3ls {
+    width: 30%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.form-w3ls {
+    width: 89%;
+    margin: 0 auto 15px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 33px;
+    font-weight: 600;
+    float: left;
+    color: #000;
+}
+
+button.sign-in {
+    width: 125px;
+    height: 60px;
+    float: right;
+    margin-right: -120px;
+    border: none;
+    background-color: #ab8071;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+}
+
+    button.sign-in img {
+        width: 55px;
+        opacity: 0.8;
+    }
+
+    button.sign-in:hover img, button.sign-in:focus img {
+        opacity: 1;
+    }
+
+input[type="text"], input[type="email"], textarea {
+    width: 85%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ab8071;
+    background-color: rgba(255, 255, 255, 0.75);
+    font-weight: normal;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: 2px solid #ab8071;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 30px;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+}
+
+input.sign-in {
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    background-color: #ab8071;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+    input.sign-in:hover {
+        background-color: #000;
+    }
+
+p.copyright {
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+    p.copyright a {
+        color: #ab8071;
+    }
+
+        p.copyright a:hover {
+            color: red;
+        }
+
+</style>
+<body>
+    <h1>Bus Sheba Contact Form</h1>
+    <div class="content-w3ls">
+        <form action="#" method="post" class="form-agileits">
+            <div class="form-w3ls">
+                <h2>Contact Us</h2>
+                <button type="submit" class="sign-in" value="Sign In"><img src="~/Image/msg.jpg" alt=""></button>
+                <div class="clear"></div>
+            </div>
+            <input type="text" name="userid" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}">
+            <input type="email" name="email" value="EMAIL@ADDRESS.COM" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'EMAIL@ADDRESS.COM';}">
+            <textarea type="message" name="message" value="YOUR MESSAGE" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'YOUR MESSAGE';}">YOUR MESSAGE</textarea>
+            <input type="submit" class="sign-in" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿@using Bus_Ticket_2.Models
+
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+<h2>@ViewBag.Title.</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    </head>
+<style>
+
+.section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+body{
+
+     padding:0;
+    margin:0;
+    background:url(../Image/bus4.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+
+.booking-form {
+	background-color: rgba(255, 255, 255, 0.50);;
+  
+	padding:50px 50px 50px 50px;
+	-webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+    </style>
+
+
+
+<body>
+                                        <div id="booking" class="section">
+                                            <div class="section-center">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-md-push-5">
+                                                            <div class="booking-form">
+                                                                <h3>Get Logged In </h3>
+                                                                <section id="loginForm">
+                                                                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl },
+                                                                    FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                                                    {
+                                                                        @Html.AntiForgeryToken()
+
+                                                                        <hr />
+                                                                        <hr />
+                                                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                                        <div class="form-group">
+                                                                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                                                            <div class="col-md-10">
+                                                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                                                            <div class="col-md-10">
+                                                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p>
+                                                                                Stay Connected with us .
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-md-offset-2 col-md-10">
+                                                                                <div class="checkbox">
+                                                                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                                                                    @Html.LabelFor(m => m.RememberMe)
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-md-offset-2 col-md-10">
+                                                                                <input type="submit" value="Log in" class="btn btn-default" />
+                                                                            </div>
+                                                                        </div>
+
+                                                                    }
+                                                                </section>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+</div>
+
+                                                                </div>
+                                                            </div>
+</body>
+</html>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+

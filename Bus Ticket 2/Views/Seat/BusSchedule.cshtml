@@ -1,0 +1,307 @@
+﻿
+@{
+    ViewBag.Title = "BusSchedule";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+</head>
+<style>
+    table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #0c0d42; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+    font-weight:bold;
+	border: 1px solid #ccc; 
+	text-align: left;
+    
+	font-size: 18px;
+	}
+
+
+    @@media-desktop only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+        table {
+            width: 100%;
+        }
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+            /* Hide table headers (but not display: none;, for accessibility) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+        tr {
+            border: 1px solid #ccc;
+        }
+
+        td {
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+        }
+
+            td:before {
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                /* Label the data */
+                content: attr(data-column);
+                color: #000;
+                font-weight: bold;
+            }
+
+        .submit-btn {
+            display: block;
+            color: #21418d;
+            background-color: #c1f1fa;
+            font-weight: 700;
+            padding: 50px 80px;
+            border-radius: 8px;
+            border: none;
+            -webkit-transition: 0.2s all;
+            transition: 0.2s all;
+        }
+
+      
+    }
+
+ 
+    body {
+         background-color:#626da3;
+  
+    background-size: cover;
+    position: relative;
+}
+
+
+
+section {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+
+
+
+  .bus {
+            opacity: 0;
+            transform: translate(-200px, 0);
+            animation: busMove 6s linear infinite;
+          }
+
+        @@-webkit-keyframes   busMove {
+            0 {
+              opacity: 0;
+              transform: translate(-140px, 0);
+            }
+            24% {
+              opacity: 1;
+            }
+            70% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+              transform: translate(150px, 0);
+            }
+          }
+
+
+
+</style>
+<body>
+
+    <div class="booking">
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+                <circle fill="#FFF" cx="100" cy="100" r="100"></circle>
+                <circle fill="#C5E6EA" cx="25.5" cy="100.5" r="25.5"></circle>
+                <circle fill-opacity=".678" fill="#C5E6EA" cx="66.5" cy="127.5" r="33.5"></circle>
+                <circle fill-opacity=".742" fill="#C5E6EA" cx="63.5" cy="88.5" r="37.5"></circle>
+                <circle fill-opacity=".517" fill="#FFF" cx="74.5" cy="99.5" r="26.5"></circle>
+                <circle fill-opacity=".684" fill="#C5E6EA" cx="117.5" cy="83.5" r="42.5"></circle>
+                <circle fill-opacity=".73" fill="#C5E6EA" cx="143.5" cy="118.5" r="42.5"></circle>
+                <circle fill-opacity=".984" fill="#C5E6EA" cx="96" cy="126" r="21"></circle>
+                <circle fill="#C5E6EB" cx="163" cy="65" r="31"></circle>
+                <circle fill-opacity=".569" fill="#FFF" cx="180" cy="99" r="20"></circle>
+                <g class="bus">
+                    <path fill="#88A9BC" d="M57 85h82v22H57zM148.5 90H146c-.55 0-1 .45-1 1v15c0 .55.45 1 1 1h2.5c.275 0 .5-.225.5-.5v-16c0-.275-.225-.5-.5-.5z"></path>
+                    <path d="M70.208 113.5a6.747 6.747 0 0 0-6.75 6.749 6.748 6.748 0 0 0 6.75 6.751 6.751 6.751 0 0 0 0-13.5zm0 10.431a3.677 3.677 0 0 1-3.683-3.682 3.677 3.677 0 0 1 3.683-3.68 3.68 3.68 0 1 1 0 7.362zM129.676 113.5a6.749 6.749 0 0 0-6.75 6.749 6.751 6.751 0 1 0 6.75-6.749zm0 10.431a3.676 3.676 0 0 1-3.68-3.682 3.677 3.677 0 0 1 3.68-3.68 3.675 3.675 0 0 1 3.677 3.68 3.675 3.675 0 0 1-3.677 3.682z" fill="#454545"></path>
+                    <path d="M53 109v-6c0-.55-.45-1-1-1s-1 .45-1 1v6c0 .55.45 1 1 1s1-.45 1-1z" fill="#FFF"></path>
+                    <path d="M145.129 109C144 109 143 108 143 106.832V90c0-1.219.698-2 2.218-2h3.653s0-6-5.748-6H114v-1c0-.55-.45-1-1-1H86c-.55 0-1 .45-1 1v1H58.704C55.071 82 52 83.833 52 87.666V101h1.107c.505 0 .893.517.893 1.021v8.176c0 .503-.388.803-.893.803H52v3.5c0 5.749 6.7 5.5 6.7 5.5h1.922c0-5.178 4.291-9.37 9.586-9.37 5.293 0 9.58 4.192 9.58 9.37h40.252c0-5.178 4.291-9.37 9.582-9.37 5.294 0 9.378 4.192 9.378 9.37h4.131s5.869.249 5.869-5.5V109h-3.871zM71 101H58V88h13v13zm16 0H74V88h13v13zm16 0H90V88h13v13zm16 0h-13V88h13v13zm16 0h-13V88h13v13z" fill="#FFF"></path>
+                    <path fill="#215EC8" d="M54 101h89v3H54z"></path>
+                    <path fill="#00B44A" d="M54 104h89v3H54z"></path>
+                </g>
+
+            </g>
+        </svg>
+
+
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operator(Bus Type)</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Seats Available</th>
+                    <th>Fare </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Nabil Paribahan</td>
+                    <td data-column="Departure Time">10:00 P.M.</td>
+                    <td data-column="Arrival Time">5:45 A.M.</td>
+                    <td data-column="Seats Available">40</td>
+                    <td data-column="Fare">900tk</td>
+                </tr>
+
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Bablu Paribahan</td>
+                    <td data-column="Departure Time">9:00 P.M.</td>
+                    <td data-column="Arrival Time">12:00 A..M.</td>
+                    <td data-column="Seats Available">10</td>
+                    <td data-column="Fare">699tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Nirala Super Service</td>
+                    <td data-column="Departure Time">10:00 A.M.</td>
+                    <td data-column="Arrival Time">1:55 P.M.</td>
+                    <td data-column="Seats Available">20</td>
+                    <td data-column="Fare">666tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Rajdhani Express</td>
+                    <td data-column="Departure Time">3:00 P.M.</td>
+                    <td data-column="Arrival Time">5:45 P.M.</td>
+                    <td data-column="Seats Available">30</td>
+                    <td data-column="Fare">778tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Razib Enterprise</td>
+                    <td data-column="Departure Time">10:00 P.M.</td>
+                    <td data-column="Arrival Time">5:45 P.M.</td>
+                    <td data-column="Seats Available">22</td>
+                    <td data-column="Fare">600tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Sony Paribahan</td>
+                    <td data-column="Departure Time">2:00 P.M.</td>
+                    <td data-column="Arrival Time">5:00 P.M.</td>
+                    <td data-column="Seats Available">23</td>
+                    <td data-column="Fare">1200tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Saira Paribahan</td>
+                    <td data-column="Departure Time">2:00 P.M.</td>
+                    <td data-column="Arrival Time">2:35 P.M.</td>
+                    <td data-column="Seats Available">43</td>
+                    <td data-column="Fare">990tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Rasel Enterprise</td>
+                    <td data-column="Departure Time">1:00 P.M.</td>
+                    <td data-column="Arrival Time">2:45 P.M.</td>
+                    <td data-column="Seats Available">22</td>
+                    <td data-column="Fare">880tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">S.P Gloden line</td>
+                    <td data-column="Departure Time">10:00 P.M.</td>
+                    <td data-column="Arrival Time">5:45 P.M.</td>
+                    <td data-column="Seats Available">02</td>
+                    <td data-column="Fare">670tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">SM Paribahan </td>
+                    <td data-column="Departure Time">8:00 A.M.</td>
+                    <td data-column="Arrival Time">1:00 P.M.</td>
+                    <td data-column="Seats Available">22</td>
+                    <td data-column="Fare">450tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Shamoli Paribahan</td>
+                    <td data-column="Departure Time">10:00 A.M.</td>
+                    <td data-column="Arrival Time">1:00 P.M.</td>
+                    <td data-column="Seats Available">45</td>
+                    <td data-column="Fare">630tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">National Paribahan</td>
+                    <td data-column="Departure Time">10:00 P.M.</td>
+                    <td data-column="Arrival Time">5:45 P.M.</td>
+                    <td data-column="Seats Available">12</td>
+                    <td data-column="Fare">670tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">Azmiri Enterprise</td>
+                    <td data-column="Departure Time">6:00 P.M.</td>
+                    <td data-column="Arrival Time">8:00 P.M.</td>
+                    <td data-column="Seats Available">13</td>
+                    <td data-column="Fare">700tk</td>
+                </tr>
+                <tr>
+                    <td data-column="Operator(Bus Type)">AK Travels</td>
+                    <td data-column="Departure Time">10:00 P.M.</td>
+                    <td data-column="Arrival Time">5:45 P.M.</td>
+                    <td data-column="Seats Available">40</td>
+                    <td data-column="Fare">800tk</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container">
+            <div class="col-md-2"></div><div class="col-md-4"></div><div class="col-md-3"></div><div class="col-md-4"></div>
+
+            <div class="form-btn">
+                <button class="submit-btn col-md-4 ">
+                    <a href="https://localhost:44335/Seat/SeatBook">View Seats</a>
+                </button>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+</body>
+</html>

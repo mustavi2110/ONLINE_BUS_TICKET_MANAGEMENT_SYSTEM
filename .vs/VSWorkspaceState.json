@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Bus Ticket 2",
+    "\\Bus Ticket 2\\Controllers",
+    "\\Bus Ticket 2\\Views",
+    "\\Bus Ticket 2\\Views\\FirstPage",
+    "\\Bus Ticket 2\\Views\\Home",
+    "\\Bus Ticket 2\\Views\\Seat",
+    "\\Bus Ticket 2\\Views\\Shared",
+    "\\img"
+  ],
+  "SelectedNode": "\\Bus Ticket 2\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}
